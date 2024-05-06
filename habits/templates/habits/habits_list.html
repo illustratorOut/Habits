@@ -1,0 +1,16 @@
+{% extends 'habits/base.html' %}}
+{% load static%}
+
+{% block content%}
+
+
+<div class="container py-3">
+    <div class="row row-cols-1 row-cols-md-4 mb-3 text-center">
+        {% csrf_token %}
+        {{ form.as_p }}
+    </div>
+</div>
+
+
+{% endblock %}
+
