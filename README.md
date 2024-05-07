@@ -9,6 +9,12 @@
 flake8 . --exclude=venv,env,migrations --ignore=E501
 ```
 
+```commandline
+celery -A config worker -l INFO
+celery -A config worker --loglevel=info -P eventlet
+celery -A config beat -l INFO -S django
+```
+
 ```dotenv
 CACHE_ENABLED=True
 REDIS=redis://127.0.0.1:6379
