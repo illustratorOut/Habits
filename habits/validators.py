@@ -41,9 +41,11 @@ class RelatedHabitIsPublicValidator:
 
     def __call__(self, value):
         habit_id = value.get('id')
-        habit = Habits.objects.filter(pk=habit_id, is_pleasant=True)
-        if not habit:
-            raise ValidationError('В связанные привычки могут попадать только привычки с признаком приятной привычки.')
+        if habit_id is not None:
+            habit = Habits.objects.filter(pk=habit_id, is_pleasant=True)
+            if not habit:
+                raise ValidationError(
+                    'В связанные привычки могут попадать только привычки с признаком приятной привычки.')
 
 
 class PleasantHabitNotRewardValidator:

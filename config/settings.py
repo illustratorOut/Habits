@@ -160,7 +160,7 @@ CELERY_RESULT_BACKEND = os.getenv('CELERY_RESULT_BACKEND')
 CELERY_BEAT_SCHEDULE = {
     'task-name': {
         'task': 'habits.tasks.send_telegram',  # Путь к задаче
-        'schedule': timedelta(seconds=10),  # Расписание выполнения задачи (например, каждые 10 минут)
+        'schedule': timedelta(seconds=30),  # Расписание выполнения задачи (например, каждые 10 минут)
     },
 }
 
