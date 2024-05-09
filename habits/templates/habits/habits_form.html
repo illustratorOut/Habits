@@ -1,0 +1,38 @@
+{% extends 'habits/base.html' %}
+
+
+{% block content%}
+
+
+<div class="container">
+
+    <form method="post" enctype="multipart/form-data">
+        <div class="row justify-content-center">
+            <div class="col-8">
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="card-title text-center">
+                            {% if object.place%}
+                            Изменение привычки
+                            {% else %}
+                            Добавление привычки
+                            {% endif %}
+                        </h2>
+                    </div>
+                    <div class="card-body">
+                        {% csrf_token %}
+                        {{ form.as_p }}
+
+
+                        <button type="submit" class="btn btn-success">Сохранить</button>
+                    </div>
+                    <div class="card-footer"></div>
+                </div>
+            </div>
+
+
+        </div>
+    </form>
+</div>
+
+{% endblock %}

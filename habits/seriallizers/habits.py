@@ -8,7 +8,6 @@ from habits.validators import ExecuteTimeValidator, RewardorRelatedHabitValidato
 class HabitsSerializer(serializers.ModelSerializer):
     class Meta:
         model = Habits
-        # fields = '__all__'
         exclude = ('user',)
 
 
