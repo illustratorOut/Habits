@@ -7,9 +7,10 @@
 
 ```commandline
 flake8 . --exclude=venv,env,migrations --ignore=E501
-```
 
-```commandline
+coverage run --source='.' manage.py test
+coverage report
+
 celery -A config worker -l INFO
 celery -A config worker --loglevel=info -P eventlet
 celery -A config beat -l INFO -S django

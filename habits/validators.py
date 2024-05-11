@@ -14,7 +14,7 @@ class ExecuteTimeValidator:
 
         if 0 == execute_time:
             raise ValidationError('Время выполнения не может равняться нулю')
-        elif execute_time >= 120:
+        elif execute_time > 120:
             raise ValidationError('Время выполнения должно быть не больше 120 секунд')
 
 
